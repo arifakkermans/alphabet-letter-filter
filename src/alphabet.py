@@ -30,7 +30,6 @@ class LetterFilter:
             raise ValueError("It was not a ascii-encoded unicode string.")
 
         new_s = ''.join([x for x in string.lower() if x in LetterFilter.vowels])
-        new_s = f"Filtered vowels: {new_s}"
 
         return new_s
 
@@ -49,13 +48,12 @@ class LetterFilter:
 
         new_s = ''.join(
             [x for x in string.lower() if x not in LetterFilter.vowels])
-        new_s = f"Filtered consonants: {new_s}"
 
         return new_s
 
-input_string = str(input("Please enter a string: "))
+# input_string = str(input("Please enter a string: "))
 
-filter = LetterFilter()
+# filter = LetterFilter()
 
-print (filter.filter_vowels(input_string))
-print (filter.filter_consonants(input_string))
+# print (filter.filter_vowels(input_string))
+# print (filter.filter_consonants(input_string))
