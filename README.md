@@ -7,5 +7,5 @@ The LetterFilter class takes a string in the constructor and stores it to its st
 To test this app, you need to be in the src folder. Then run the following:
 
 ```bash
-pythonpython -m pytest ../tests/
+python -m pytest ../tests/
 ```
