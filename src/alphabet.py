@@ -1,6 +1,5 @@
 """Alphabet Filter"""
 import logging
-from typing import NewType
 
 logging.basicConfig()
 logger = logging.getLogger(__name__)
@@ -30,12 +29,10 @@ class LetterFilter:
         if not string.isascii():
             raise ValueError("It was not a ascii-encoded unicode string.")
 
-        new_s = []
-        for x in string.lower():
-            if x in LetterFilter.vowels:
-                new_s.extend(x)
-        
-        return f"Filtered vowels: {new_s}"
+        new_s = ''.join([x for x in string.lower() if x in LetterFilter.vowels])
+        new_s = f"Filtered vowels: {new_s}"
+
+        return new_s
 
     def filter_consonants(self, string: str):
         """
@@ -50,12 +47,11 @@ class LetterFilter:
         if not string.isascii():
             raise ValueError("It was not a ascii-encoded unicode string.")
 
-        new_s = []
-        for x in string.lower():
-            if x not in LetterFilter.vowels:
-                new_s.extend(x)
-        
-        return f"Filtered consonants: {new_s}"
+        new_s = ''.join(
+            [x for x in string.lower() if x not in LetterFilter.vowels])
+        new_s = f"Filtered consonants: {new_s}"
+
+        return new_s
 
 input_string = str(input("Please enter a string: "))
 
